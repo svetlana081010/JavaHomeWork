@@ -32,7 +32,6 @@ public class Array {
         }
         System.out.println("Number of positive elements = " + count);
 
-
         boolean isSorted = false;
         int temp;
         while (!isSorted) {
@@ -48,6 +47,5 @@ public class Array {
             }
         }
         System.out.println("Bubble sort: " + Arrays.toString(array));
-
     }
 }

@@ -9,30 +9,31 @@ public class Bingo {
         Random random = new Random();
         int hiddenNumber = random.nextInt(101);
         Scanner s = new Scanner(System.in);
-        System.out.println("To exit the program enter - 'off'");
+        System.out.println("To exit the program enter - '999'");
         System.out.println("We have chosen a number from 0 to 100. Try to guess it: ");
 
-        for (; ; ) {
+        while (hiddenNumber >= 0) {
             count++;
             int userNumber = s.nextInt();
-            if (userNumber != hiddenNumber) {
-                if (userNumber > hiddenNumber) {
-                    System.out.println("This number is greater than the one that was guessed. Try again");
-                    continue;
-                }
-                if (userNumber < hiddenNumber) {
-                    System.out.println("This number is less than the one guessed. Try again");
-                    continue;
 
-                }
-
+            if (userNumber == 999) {
+                break;
             }
+            if (userNumber > hiddenNumber) {
+                System.out.println("This number is greater than the one that was guessed. Try again");
+                continue;
+            }
+            if (userNumber < hiddenNumber) {
+                System.out.println("This number is less than the one guessed. Try again");
+                continue;
+            }
+
             if (userNumber == hiddenNumber) {
                 System.out.println("Congratulations! You guessed it on " + count + " tries");
                 break;
             }
 
         }
-
+        System.out.println("Game over");
     }
 }
